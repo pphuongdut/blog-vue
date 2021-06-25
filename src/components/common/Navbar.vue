@@ -1,7 +1,8 @@
 <template>
-  <div id="nav" class="navbar flex justify-between">
-    <div class="flex items-center">
-      <span class="brand font-bold mr-5">
+  <div id="nav" class="navbar flex justify-start relative">
+
+    <div v-if="this.$route.meta.layout !== 'secret'" class="flex items-center">
+      <span class="brand font-bold mr-5"   @click="$router.push('/')">
         <b class="bg-black text-white py-2 pl-2"> BEE</b>CODE.</span
       >
       <div>
@@ -11,7 +12,7 @@
       </div>
       <!-- <router-link to="/auth/login">Login</router-link> -->
     </div>
-    <div class="flex">
+    <div class="flex absolute top-0 right-0 h-100">
       <div class="relative mx-2">
         <transition name="fade">
           <input
@@ -44,6 +45,9 @@ export default {
       searchActive: false,
     };
   },
+  created() {
+  
+  }
 };
 </script>
 

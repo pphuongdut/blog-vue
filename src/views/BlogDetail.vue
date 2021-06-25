@@ -1,22 +1,6 @@
 <template>
   <div>
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <h1>BLOGS</h1>
-    <div
-      class="flex"
-      v-for="(blog, index) in blogs"
-      :key="'blog' + blog.id + index"
-      @click="RenderSinglePost(blog)"
-    >
-      <img :src="blog.thumbnail" alt="" srcset="" />
-      <div>
-        <h4>
-          {{ blog.title }}
-        </h4>
-        <p>{{ blog.description }}</p>
-      </div>
-    </div>
-    <DetailBlog />
+    <DetailBlog :blog="blog" />
   </div>
 </template>
 
@@ -25,7 +9,7 @@
 import DetailBlog from "@/components/uncommon/Blogs/DetailBlog.vue";
 
 export default {
-  name: "Home",
+  name: "Detail",
   components: {
     DetailBlog,
   },
@@ -155,10 +139,17 @@ export default {
       ],
     };
   },
-  methods: {
-    RenderSinglePost(blog) {
-      this.$emit("clicked-something", blog);
-      this.$router.push("/blog/" + blog.id);
+  created() {
+    alert(this.$route.params.id);
+  },
+  computed: {
+    blog() {
+      this.blogs.forEach((blog) => {
+        if (blog.id === this.$route.params.id) {
+          return blog;
+        }
+      });
+      return this.blogs[0];
     },
   },
 };

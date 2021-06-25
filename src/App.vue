@@ -12,15 +12,19 @@
 <script>
 import defautLayout from "@/layout/default.vue";
 import unauthLayout from "@/layout/unauth.vue";
-
+import secretLayout from "@/layout/secret.vue";
 export default {
   components: {
     defautLayout,
     unauthLayout,
+    secretLayout,
   },
   computed: {
     layout() {
-      console.log("layout" + this.$route.meta.layout);
+      // console.log("layout" + this.$route.meta.layout);
+      if (this.$route.meta.layout === "secret") {
+        return "secretLayout";
+      }
       return this.$route.meta.layout === "unauth"
         ? "unauthLayout"
         : "defautLayout";
@@ -37,5 +41,8 @@ export default {
 .main {
   padding: 1.5rem;
   padding-bottom: 0px;
+}
+.padding {
+  
 }
 </style>
