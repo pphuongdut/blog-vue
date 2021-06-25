@@ -68,7 +68,7 @@ const routes = [
     meta: {
       layout: "secret",
     },
-    component: () => import("../views/Login.vue"),
+    component: () => import("../views/DashBoard.vue"),
   },
 ];
 
