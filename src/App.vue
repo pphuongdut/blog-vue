@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div >
     <transition name="fade" mode="out-in">
       <component :is="layout">
         <transition name="slide-fade" mode="out-in">
@@ -30,24 +30,16 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap");
+* {
+  font-family: "Roboto", sans-serif !important;
+
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #259261;
-}
 </style>
