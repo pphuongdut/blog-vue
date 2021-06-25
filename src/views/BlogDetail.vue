@@ -137,6 +137,7 @@ export default {
           id: "10",
         },
       ],
+      active_blog: {},
     };
   },
   created() {
@@ -146,10 +147,10 @@ export default {
     blog() {
       this.blogs.forEach((blog) => {
         if (blog.id === this.$route.params.id) {
-          return blog;
+          this.active_blog = blog;
         }
       });
-      return this.blogs[0];
+      return this.active_blog ;
     },
   },
 };

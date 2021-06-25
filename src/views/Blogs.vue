@@ -1,33 +1,38 @@
 <template>
-  <div>
+  <div class="flex items-center flex-col">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <h1>BLOGS</h1>
+    <h1 class="main_title text-3xl text-center font-bold">BLOGS</h1>
     <div
-      class="flex"
+      class="flex p-5 w-2/3"
       v-for="(blog, index) in blogs"
       :key="'blog' + blog.id + index"
       @click="RenderSinglePost(blog)"
     >
-      <img :src="blog.thumbnail" alt="" srcset="" />
-      <div>
-        <h4>
+      <img
+        class="w-2/5 h-auto object-cover"
+        :src="blog.thumbnail"
+        alt=""
+        srcset=""
+      />
+      <div class="flex flex-col items-start justify-center px-5">
+        <h4 class="font-bold text-green-900">
           {{ blog.title }}
         </h4>
-        <p>{{ blog.description }}</p>
+        <small class="text-gray-500"> {{ blog.createdAt }} </small>
+        <p>{{ blog.content }}</p>
       </div>
     </div>
-    <DetailBlog />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import DetailBlog from "@/components/uncommon/Blogs/DetailBlog.vue";
+// import DetailBlog from "@/components/uncommon/Blogs/DetailBlog.vue";
 
 export default {
   name: "Home",
   components: {
-    DetailBlog,
+    // DetailBlog,
   },
   data() {
     return {
@@ -155,11 +160,13 @@ export default {
       ],
     };
   },
+  created() {},
   methods: {
     RenderSinglePost(blog) {
-      this.$emit("clicked-something", blog);
       this.$router.push("/blog/" + blog.id);
     },
   },
 };
 </script>
+
+<style scoped></style>

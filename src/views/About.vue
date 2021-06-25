@@ -1,5 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <AboutHeader />
   </div>
 </template>
+<script>
+import AboutHeader from "@/components/uncommon/About/Header.vue";
+export default {
+  components: {
+    AboutHeader,
+  },
+};
+</script>
