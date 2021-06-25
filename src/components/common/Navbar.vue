@@ -49,9 +49,9 @@ export default {
 
 <style scoped>
 #nav {
-  padding: 1.5rem;
+  height: 50px;
+  margin-bottom: 10px;
 }
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;

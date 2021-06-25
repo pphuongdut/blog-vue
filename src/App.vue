@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="main">
     <transition name="fade" mode="out-in">
       <component :is="layout">
         <transition name="slide-fade" mode="out-in">
@@ -33,13 +33,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap");
 * {
   font-family: "Roboto", sans-serif !important;
-
 }
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.main {
+  padding: 1.5rem;
+  padding-bottom: 0px;
 }
-
 </style>
